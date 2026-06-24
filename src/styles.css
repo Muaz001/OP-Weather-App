@@ -39,15 +39,3 @@ img, picture, video, canvas, svg {
 }
 /* CSS RESET ENDING */
 
-
-body {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-}
-
-.container {
-    display: flex;
-    gap: 150px;
-}
