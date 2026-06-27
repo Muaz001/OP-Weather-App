@@ -1,5 +1,5 @@
 import "./styles.css"
-import { display } from "./display.js";
+import { display, change_color } from "./display.js";
 
 
 async function get_weather_data(location){
@@ -17,10 +17,10 @@ function main(){
         let location = input.value;
 
         let data = await get_weather_data(location);
-
+        
+        change_color(data);
         display(data);
     })
 }
-
 
 main();

@@ -60,7 +60,10 @@ form {
     
     display: flex;
     flex-direction: column;
-    
 
     gap: 20px;
+}
+
+.card, main{
+    padding: 0px 10%;
 }
