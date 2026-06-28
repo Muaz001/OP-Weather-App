@@ -1,26 +1,26 @@
-import "./styles.css"
+import "./styles.css";
 import { display, change_color } from "./display.js";
 
-
-async function get_weather_data(location){
-    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=7B2BYVXBHT4Q8AMPNJBLWK4J5`);
-    const data = await response.json();
-    return data;
+async function get_weather_data(location) {
+  const response = await fetch(
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=7B2BYVXBHT4Q8AMPNJBLWK4J5`,
+  );
+  const data = await response.json();
+  return data;
 }
 
+function main() {
+  let btn = document.querySelector(".search_btn");
 
-function main(){
-    let btn = document.querySelector(".search_btn");
+  btn.addEventListener("click", async () => {
+    let input = document.querySelector("input");
+    let location = input.value;
 
-    btn.addEventListener("click", async() => {
-        let input = document.querySelector("input");
-        let location = input.value;
+    let data = await get_weather_data(location);
 
-        let data = await get_weather_data(location);
-        
-        change_color(data);
-        display(data);
-    })
+    change_color(data);
+    display(data);
+  });
 }
 
 main();
